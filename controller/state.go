@@ -15,6 +15,7 @@ import (
 	"github.com/argoproj/gitops-engine/pkg/diff"
 	"github.com/argoproj/gitops-engine/pkg/health"
 	"github.com/argoproj/gitops-engine/pkg/sync"
+	synccommon "github.com/argoproj/gitops-engine/pkg/sync/common"
 	hookutil "github.com/argoproj/gitops-engine/pkg/sync/hook"
 	"github.com/argoproj/gitops-engine/pkg/sync/ignore"
 	resourceutil "github.com/argoproj/gitops-engine/pkg/sync/resource"
@@ -742,6 +743,10 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *v1
 			needsPruning := targetObj == nil && liveObj != nil
 			if !(needsPruning && resourceutil.HasAnnotationOption(obj, common.AnnotationCompareOptions, "IgnoreExtraneous")) {
 				syncCode = v1alpha1.SyncStatusCodeOutOfSync
+			}
+			// set the pruning disabled flag if the resource has the annotation
+			if needsPruning && resourceutil.HasAnnotationOption(liveObj, synccommon.AnnotationSyncOptions, synccommon.SyncOptionDisablePrune) {
+				resState.PruningDisabled = true
 			}
 		} else {
 			resState.Status = v1alpha1.SyncStatusCodeSynced
