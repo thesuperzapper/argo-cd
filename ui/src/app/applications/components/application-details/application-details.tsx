@@ -474,6 +474,7 @@ export class ApplicationDetails extends React.Component<RouteComponentProps<{app
                                             resource.hook = status.hook;
                                             resource.syncWave = status.syncWave;
                                             resource.requiresPruning = status.requiresPruning;
+                                            resource.pruningDisabled = status.pruningDisabled;
                                         }
                                         resources.set(node.uid || AppUtils.nodeKey(node), resource);
                                     });

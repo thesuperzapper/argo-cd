@@ -19,7 +19,7 @@ export const IndividualDiffSection = (props: IndividualDiffSectionProps) => {
         <div className={`${whiteBox} application-component-diff__diff`}>
             {showPath && (
                 <p className='application-resources-diff__diff__title'>
-                    {file.newPath}
+                    {file.oldPath || file.newPath}
                     <i className={`fa fa-caret-${collapsed ? 'down' : 'up'} diff__collapse`} onClick={() => setCollapsed(!collapsed)} />
                 </p>
             )}

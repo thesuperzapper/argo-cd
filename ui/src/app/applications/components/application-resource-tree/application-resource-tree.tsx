@@ -41,6 +41,7 @@ export interface ResourceTreeNode extends models.ResourceNode {
     hook?: boolean;
     root?: ResourceTreeNode;
     requiresPruning?: boolean;
+    pruningDisabled?: boolean;
     orphaned?: boolean;
     podGroup?: PodGroup;
     isExpanded?: boolean;

@@ -1762,6 +1762,7 @@ type ResourceStatus struct {
 	Hook            bool           `json:"hook,omitempty" protobuf:"bytes,8,opt,name=hook"`
 	RequiresPruning bool           `json:"requiresPruning,omitempty" protobuf:"bytes,9,opt,name=requiresPruning"`
 	SyncWave        int64          `json:"syncWave,omitempty" protobuf:"bytes,10,opt,name=syncWave"`
+	PruningDisabled bool           `json:"pruningDisabled,omitempty" protobuf:"bytes,11,opt,name=pruningDisabled"`
 }
 
 // GroupVersionKind returns the GVK schema type for given resource status
