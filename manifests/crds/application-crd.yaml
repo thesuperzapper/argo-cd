@@ -4459,6 +4459,8 @@ spec:
                       type: string
                     namespace:
                       type: string
+                    pruningDisabled:
+                      type: boolean
                     requiresPruning:
                       type: boolean
                     status:
