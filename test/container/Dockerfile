@@ -103,10 +103,13 @@ RUN userdel -r ubuntu && \
     HOME=/home/user git config --global user.name "ArgoCD Test User" && \
     HOME=/home/user git config --global user.email "noreply@example.com" && \
     HOME=/home/user git config --global --add safe.directory '*' && \
+    mkdir -p /go && \
     mkdir -p /go/pkg && \
+    mkdir -p /go/src/github.com/argoproj/argo-cd && \
+    chown -R user /go && \
+    chgrp -R user /go && \
     mkdir -p /var/run/sshd && \
     mkdir -p /root/.ssh && \
-    mkdir -p /go && \
     chown root /etc/ssh/ssh_host_*_key* && \
     chmod 0600 /etc/ssh/ssh_host_*_key && \
     mkdir -p /tmp/go-build-cache && \
