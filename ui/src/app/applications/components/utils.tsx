@@ -230,7 +230,7 @@ export const ComparisonStatusIcon = ({
     noSpin
 }: {
     status: appModels.SyncStatusCode;
-    resource?: {requiresPruning?: boolean};
+    resource?: {requiresPruning?: boolean; pruningDisabled?: boolean};
     label?: boolean;
     noSpin?: boolean;
 }) => {
@@ -247,12 +247,21 @@ export const ComparisonStatusIcon = ({
         case appModels.SyncStatuses.OutOfSync:
             // eslint-disable-next-line no-case-declarations
             const requiresPruning = resource && resource.requiresPruning;
-            className = requiresPruning ? 'fa fa-trash' : 'fa fa-arrow-alt-circle-up';
+            // eslint-disable-next-line no-case-declarations
+            const pruningDisabled = resource && resource.pruningDisabled;
+            className = 'fa fa-arrow-alt-circle-up';
+            color = COLORS.sync.out_of_sync;
             title = 'OutOfSync';
             if (requiresPruning) {
-                title = `${title} (This resource is not present in the application's source. It will be deleted from Kubernetes if the prune option is enabled during sync.)`;
+                if (pruningDisabled) {
+                    className = 'fa fa-eye-slash';
+                    color = COLORS.sync.pruning_disabled;
+                    title = `${title} (This resource is not present in the application's source. But it has been disabled from pruning.)`;
+                } else {
+                    className = 'fa fa-trash';
+                    title = `${title} (This resource is not present in the application's source. It will be deleted from Kubernetes if the prune option is enabled during sync.)`;
+                }
             }
-            color = COLORS.sync.out_of_sync;
             break;
         case appModels.SyncStatuses.Unknown:
             className = `fa fa-circle-notch ${noSpin ? '' : 'fa-spin'}`;
