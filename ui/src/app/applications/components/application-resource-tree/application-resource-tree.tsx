@@ -889,6 +889,7 @@ export const ApplicationResourceTree = (props: ApplicationResourceTreeProps) => 
                 resourceNode.status = status.status;
                 resourceNode.hook = status.hook;
                 resourceNode.requiresPruning = status.requiresPruning;
+                resourceNode.pruningDisabled = status.pruningDisabled;
             }
             nodeByKey.set(treeNodeKey(node), resourceNode);
         });

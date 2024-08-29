@@ -12,6 +12,7 @@ import './application-resources-diff.scss';
 
 export interface ApplicationResourcesDiffProps {
     states: models.ResourceDiff[];
+    singleResource?: boolean;
 }
 
 export const ApplicationResourcesDiff = (props: ApplicationResourcesDiffProps) => (
@@ -42,9 +43,10 @@ index 6829b8a2..4c565f1b 100644
 ${formatLines(diffLines(i.a, i.b), {context, aname: `a/${aName}`, bname: `b/${bName}`})}`;
                 })
                 .join('\n');
-            // assume that if you only have one file, we don't need the file path
-            const whiteBox = props.states.length > 1 ? 'white-box' : '';
-            const showPath = props.states.length > 1;
+            // hide the extra info if we are in "single resource" mode (e.g. the node-info view)
+            const whiteBox = props.singleResource ? '' : 'white-box';
+            const showPath = !props.singleResource;
+            const showHeadings = !props.singleResource;
             const filesAdded: any[] = [];
             const filesDeleted: any[] = [];
             const filesModified: any[] = [];
@@ -90,7 +92,7 @@ ${formatLines(diffLines(i.a, i.b), {context, aname: `a/${aName}`, bname: `b/${bN
                         />
                         <label htmlFor='inlineDiff'>Inline diff</label>
                     </div>
-                    {filesAdded.length > 0 && (
+                    {showHeadings && filesAdded.length > 0 && (
                         <div className={whiteBox + ' application-resources-diff__heading'}>
                             <b>Added Resources</b>
                         </div>
@@ -98,7 +100,7 @@ ${formatLines(diffLines(i.a, i.b), {context, aname: `a/${aName}`, bname: `b/${bN
                     {filesAdded.map((file: any) => (
                         <IndividualDiffSection key={file.newPath} file={file} showPath={showPath} whiteBox={whiteBox} viewType={viewType} />
                     ))}
-                    {filesModified.length > 0 && (
+                    {showHeadings && filesModified.length > 0 && (
                         <div className={whiteBox + ' application-resources-diff__heading'}>
                             <b>Modified Resources</b>
                         </div>
@@ -106,7 +108,7 @@ ${formatLines(diffLines(i.a, i.b), {context, aname: `a/${aName}`, bname: `b/${bN
                     {filesModified.map((file: any) => (
                         <IndividualDiffSection key={file.oldPath} file={file} showPath={showPath} whiteBox={whiteBox} viewType={viewType} />
                     ))}
-                    {filesDeleted.length > 0 && (
+                    {showHeadings && filesDeleted.length > 0 && (
                         <div className={whiteBox + ' application-resources-diff__heading'}>
                             <b>Removed Resources</b>
                         </div>

@@ -281,7 +281,7 @@ export class PodView extends React.Component<PodViewProps> {
                     ...rnode,
                     info: (rnode.info || []).filter(i => !i.name.includes('Resource.')),
                     createdAt: rnode.createdAt,
-                    resourceStatus: {health: rnode.health, status: status ? status.status : null, requiresPruning: status && status.requiresPruning ? true : false},
+                    resourceStatus: {health: rnode.health, status: status ? status.status : null, requiresPruning: status && status.requiresPruning ? true : false, pruningDisabled: status && status.pruningDisabled ? true : false},
                     renderMenu: () => this.props.nodeMenu(rnode),
                     renderQuickStarts: () => this.props.quickStarts(rnode)
                 };

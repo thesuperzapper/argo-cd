@@ -64,6 +64,8 @@ type managedResource struct {
 	Namespace       string
 	Name            string
 	Hook            bool
+	RequiresPruning bool
+	PruningDisabled bool
 	ResourceVersion string
 }
 
@@ -745,7 +747,7 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *v1
 				syncCode = v1alpha1.SyncStatusCodeOutOfSync
 			}
 			// set the pruning disabled flag if the resource has the annotation
-			if needsPruning && resourceutil.HasAnnotationOption(liveObj, synccommon.AnnotationSyncOptions, synccommon.SyncOptionDisablePrune) {
+			if needsPruning && resourceutil.HasAnnotationOption(obj, synccommon.AnnotationSyncOptions, synccommon.SyncOptionDisablePrune) {
 				resState.PruningDisabled = true
 			}
 		} else {
@@ -780,6 +782,8 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *v1
 			Target:          targetObj,
 			Diff:            diffResult,
 			Hook:            resState.Hook,
+			RequiresPruning: resState.RequiresPruning,
+			PruningDisabled: resState.PruningDisabled,
 			ResourceVersion: resourceVersion,
 		}
 		resourceSummaries[i] = resState
