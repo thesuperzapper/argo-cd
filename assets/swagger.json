@@ -8509,6 +8509,12 @@
           "type": "string",
           "title": "PredictedLiveState contains JSON serialized resource state that is calculated based on normalized and target resource state"
         },
+        "pruningDisabled": {
+          "type": "boolean"
+        },
+        "requiresPruning": {
+          "type": "boolean"
+        },
         "resourceVersion": {
           "type": "string"
         },
