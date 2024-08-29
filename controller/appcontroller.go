@@ -749,6 +749,8 @@ func (ctrl *ApplicationController) hideSecretData(app *appv1.Application, compar
 			Kind:            res.Kind,
 			Hook:            res.Hook,
 			ResourceVersion: res.ResourceVersion,
+			RequiresPruning: res.RequiresPruning,
+			PruningDisabled: res.PruningDisabled,
 		}
 
 		target := res.Target

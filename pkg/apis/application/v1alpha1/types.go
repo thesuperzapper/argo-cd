@@ -1797,6 +1797,8 @@ type ResourceDiff struct {
 	PredictedLiveState string `json:"predictedLiveState,omitempty" protobuf:"bytes,10,opt,name=predictedLiveState"`
 	ResourceVersion    string `json:"resourceVersion,omitempty" protobuf:"bytes,11,opt,name=resourceVersion"`
 	Modified           bool   `json:"modified,omitempty" protobuf:"bytes,12,opt,name=modified"`
+	RequiresPruning    bool   `json:"requiresPruning,omitempty" protobuf:"bytes,13,opt,name=requiresPruning"`
+	PruningDisabled    bool   `json:"pruningDisabled,omitempty" protobuf:"bytes,14,opt,name=pruningDisabled"`
 }
 
 // FullName returns full name of a node that was used for diffing in the format "group/kind/namespace/name"
