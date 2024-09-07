@@ -33,6 +33,7 @@
     "monaco-editor": "^0.33.0",
     "oauth4webapi": "^2.3.0",
     "path": "^0.12.7",
+    "prism-color-variables": "1.0.1",
     "prop-types": "^15.8.1",
     "react": "^16.9.3",
     "react-autocomplete": "^1.8.1",
