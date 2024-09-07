@@ -4115,15 +4115,15 @@ diff-sequences@^29.6.3:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-29.6.3.tgz#4deaf894d11407c51efc8418012f9e70b84ea921"
   integrity sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==
 
-diff@^2.2.2:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-2.2.3.tgz#60eafd0d28ee906e4e8ff0a52c1229521033bf99"
-  integrity sha512-9wfm3RLzMp/PyTFWuw9liEzdlxsdGixCW0ZTU1XDmtlAkvpVXTPGF8KnfSs0hm3BPbg19OrUPPsRkHXoREpP1g==
-
 diff@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
+
+diff@^5.1.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-5.2.0.tgz#26ded047cd1179b78b9537d5ef725503ce1ae531"
+  integrity sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==
 
 dir-glob@^3.0.1:
   version "3.0.1"
@@ -5340,6 +5340,11 @@ git-url-parse@^13.1.0:
   integrity sha512-5FvPJP/70WkIprlUZ33bm4UAaFdjcLkJLpWft1BeZKqwR0uhhNGoKwlUaPtVb4LxCSQ++erHapRak9kWGj+FCA==
   dependencies:
     git-up "^7.0.0"
+
+gitdiff-parser@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/gitdiff-parser/-/gitdiff-parser-0.3.1.tgz#5eb3e66eb7862810ba962fab762134071601baa5"
+  integrity sha512-YQJnY8aew65id8okGxKCksH3efDCJ9HzV7M9rsvd65habf39Pkh4cgYJ27AaoDMqo1X98pgNJhNMrm/kpV7UVQ==
 
 glob-parent@^5.1.1, glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
@@ -8494,15 +8499,17 @@ react-deep-force-update@^2.1.1:
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.1.3.tgz#740612322e617bcced38f61794a4af75dc3d98e7"
   integrity sha512-lqD4eHKVuB65RyO/hGbEST53E2/GPbcIPcFYyeW/p4vNngtH4G7jnKGlU6u1OqrFo0uNfIvwuBOg98IbLHlNEA==
 
-react-diff-view@^2.4.10:
-  version "2.4.10"
-  resolved "https://registry.yarnpkg.com/react-diff-view/-/react-diff-view-2.4.10.tgz#7d38ebd43683f0e506d0d38472c0607e24f30a58"
-  integrity sha512-H9cyh+a002RyP4BMkSaL4OOBDNhkVpaCA+8oHeb6kS3X9Sj8cZymRHf/CyVkTmm+je/qWMa8Po0VBwSnktQ79w==
+react-diff-view@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-diff-view/-/react-diff-view-3.2.1.tgz#cc1473955fae999c1d486638c4425ceb48f3d465"
+  integrity sha512-JoDahgiyeReeH9W9lrI3Z4c4esbd/HNAOdThj6Pce/ZAukFBmXSbZ4Qv8ayo7yow+fTpRNfqtQ9gX5nArEi08w==
   dependencies:
-    classnames "^2.2.6"
+    classnames "^2.3.2"
     diff-match-patch "^1.0.5"
-    shallow-equal "^1.2.1"
-    warning "^4.0.2"
+    gitdiff-parser "^0.3.1"
+    lodash "^4.17.21"
+    shallow-equal "^3.1.0"
+    warning "^4.0.3"
 
 react-dom@^16.9.3:
   version "16.14.0"
@@ -9264,10 +9271,10 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-shallow-equal@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.1.tgz#4c16abfa56043aa20d050324efa68940b0da79da"
-  integrity sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==
+shallow-equal@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-3.1.0.tgz#e7a54bac629c7f248eff6c2f5b63122ba4320bec"
+  integrity sha512-pfVOw8QZIXpMbhBWvzBISicvToTiM5WBF1EeAUZDDSb5Dt29yl4AYbyywbJFSEsRUMr7gJaxqCdr4L3tQf9wVg==
 
 shallowequal@^1.1.0:
   version "1.1.0"
@@ -10124,12 +10131,12 @@ unicode-property-aliases-ecmascript@^1.0.4:
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz#dd57a99f6207bedff4628abefb94c50db941c8f4"
   integrity sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
 
-unidiff@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/unidiff/-/unidiff-1.0.2.tgz#8706eb36e4aa182a6ca699ecd2f8877f4b906ce0"
-  integrity sha512-2sbEzki5fBmjgAqoafwxRenfMcumMlmVAoJDwYJa3CI4ZVugkdR6qjTw5sVsl29/4JfBBXhWEAd5ars8nRdqXg==
+unidiff@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/unidiff/-/unidiff-1.0.4.tgz#45096a898285821c51e22e84be4215c05d6511cd"
+  integrity sha512-ynU0vsAXw0ir8roa+xPCUHmnJ5goc5BTM2Kuc3IJd8UwgaeRs7VSD5+eeaQL+xp1JtB92hu/Zy/Lgy7RZcr1pQ==
   dependencies:
-    diff "^2.2.2"
+    diff "^5.1.0"
 
 unique-filename@^1.1.1:
   version "1.1.1"
@@ -10278,7 +10285,7 @@ walker@^1.0.8:
   dependencies:
     makeerror "1.0.12"
 
-warning@^4.0.1, warning@^4.0.2:
+warning@^4.0.1, warning@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==

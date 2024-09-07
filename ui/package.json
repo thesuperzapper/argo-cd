@@ -36,7 +36,7 @@
     "prop-types": "^15.8.1",
     "react": "^16.9.3",
     "react-autocomplete": "^1.8.1",
-    "react-diff-view": "^2.4.10",
+    "react-diff-view": "3.2.1",
     "react-dom": "^16.9.3",
     "react-form": "2.16.3",
     "react-ga": "^2.7.0",
@@ -53,7 +53,7 @@
     "superagent": "^8.1.2",
     "timezones-list": "3.0.1",
     "tsx": "^3.4.0",
-    "unidiff": "^1.0.2",
+    "unidiff": "1.0.4",
     "url": "^0.11.0",
     "xterm": "^4.19.0",
     "xterm-addon-fit": "^0.5.0"
