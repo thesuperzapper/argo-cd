@@ -12,8 +12,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
-    "@types/react-virtualized": "^9.21.21",
-    "@types/superagent": "^8.1.6",
     "ansi-to-react": "^6.1.6",
     "argo-ui": "git+https://github.com/argoproj/argo-ui.git",
     "buffer": "^6.0.3",
@@ -92,6 +90,8 @@
     "@types/react-router": "^4.0.27",
     "@types/react-router-dom": "^4.2.3",
     "@types/react-test-renderer": "^16.8.3",
+    "@types/react-virtualized": "^9.21.21",
+    "@types/superagent": "^8.1.6",
     "@types/uuid": "^9.0.1",
     "add": "^2.0.6",
     "babel-jest": "^29.7.0",
