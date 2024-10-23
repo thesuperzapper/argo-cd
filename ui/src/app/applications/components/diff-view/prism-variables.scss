@@ -1,0 +1,28 @@
+@import "node_modules/prism-color-variables/variables";
+
+//
+// TODO: remove this once we fix below
+//       HOWEVER, we also might want to alight the colors with the "desired manifests" and "live manifests" colors
+//
+@import "node_modules/prism-color-variables/themes/visual-studio";
+
+div.theme-light {
+    //
+    // TODO: these dont seem to be working because they are not unfurled
+    //
+    @import "node_modules/prism-color-variables/themes/visual-studio";
+}
+
+div.theme-dark {
+    @import "node_modules/prism-color-variables/themes/duracula";
+}
+
+//
+// TODO: the issue seems to be that we need to import "inline" because these variables are on :root
+//       otherwise the code styles are not applied
+//
+
+//
+// TODO: there also seems to be a crash when you try and "show more" on the bottom one
+//       because there is no more content to show
+//

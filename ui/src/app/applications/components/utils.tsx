@@ -1404,3 +1404,27 @@ export const userMsgsList: {[key: string]: string} = {
     groupNodes: `Since the number of pods has surpassed the threshold pod count of 15, you will now be switched to the group node view.
                  If you prefer the tree view, you can simply click on the Group Nodes toolbar button to deselect the current view.`
 };
+
+export interface cleanStateOpts {
+    hideManagedFields?: boolean;
+    hideSystemFields?: boolean;
+}
+
+// cleanState removes fields from the resource state that are not needed for display purposes
+export function cleanState(state: any, {hideManagedFields, hideSystemFields}: cleanStateOpts): void {
+    if (!state) {
+        return;
+    }
+    if (hideManagedFields || hideSystemFields) {
+        delete state.metadata.managedFields;
+    }
+    if (hideSystemFields) {
+        delete state.metadata.selfLink;
+        delete state.metadata.uid;
+        delete state.metadata.resourceVersion;
+        delete state.metadata.creationTimestamp;
+        delete state.metadata.generation;
+        delete state.status;
+    }
+    return;
+}

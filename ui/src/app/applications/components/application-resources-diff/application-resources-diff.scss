@@ -15,6 +15,15 @@
     &__heading {
         text-align: center;
         font-size: 1.2em;
+
+        code {
+          padding: .2em .4em;
+          margin: 0;
+          font-size: 85%;
+          white-space: break-spaces;
+          background-color: #818b981f;
+          border-radius: 6px;
+        }
     }
     &__diff {
         font-size: 10pt;
@@ -30,13 +39,5 @@
                 font-size: 20px;
             }
         }
-    }
-}
-
-.custom-diff-hunk {           
-    color: $argo-color-gray-6;
-    border-bottom: 1px dashed;
-    @include themify($themes){
-        border-bottom: 1px dashed themed('text-2');
     }
 }

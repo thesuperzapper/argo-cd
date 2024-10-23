@@ -1,0 +1,14 @@
+@import 'node_modules/argo-ui/src/styles/config';
+@import 'node_modules/argo-ui/src/styles/theme';
+
+.unfold {
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        //
+        // TODO: this needs a dark theme variable
+        //
+        background-color: #fafafa
+    }
+}
